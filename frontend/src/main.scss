@@ -1,0 +1,34 @@
+@import '~@/bs.scss';
+@import '~@/element.scss';
+@import '~@/root.scss';
+
+/*
+ * Rebuild Gloabal components
+ */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 8px;
+	background-color: #efefef;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(169, 196, 247, .5);
+  &:hover {
+    background-color: rgba(169, 196, 247, .7);
+  }
+}
+
+/*
+ * Rebuild Gloabal components
+ */
+body {
+  font-family: $font_family;
+  color: $font;
+  background: #fff;
+  min-width: 1260px;
+}
+
+#app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

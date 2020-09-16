@@ -1,0 +1,69 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "modules": false,
+        "useBuiltIns": "usage",
+        "targets": {
+          "browsers": [
+            "> 1%",
+            "last 2 versions",
+            "not ie < 10"
+          ]
+        }
+      }
+    ],
+    "stage-2",
+    "jest"
+  ],
+  "plugins": [
+    "transform-es2015-modules-commonjs",
+    "transform-runtime"
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        [
+          "env",
+          {
+            "modules": "commonjs",
+            "useBuiltIns": "usage",
+            "debug": false
+          }
+        ],
+        "stage-2",
+        "jest"
+      ],
+      "plugins": [
+        "transform-runtime",
+        "transform-es2015-modules-commonjs",
+        "dynamic-import-node"
+      ]
+    },
+    "thrift": {
+      "presets": [
+        [
+          "env",
+          {
+            "modules": false,
+            "useBuiltIns": "usage",
+            "targets": {
+              "browsers": [
+                "> 1%",
+                "chrome >= 43",
+                "not ie < 10"
+              ]
+            }
+          }
+        ],
+        "stage-2",
+        "jest"
+      ],
+      "plugins": [
+        "transform-es2015-modules-commonjs",
+        "transform-runtime"
+      ]
+    }
+  }
+}

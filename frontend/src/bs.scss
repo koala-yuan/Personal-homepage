@@ -1,0 +1,60 @@
+@import '~@/root.scss';
+
+// Override Colors
+$black:   #2e2b3f;
+$blue:    #2a62c4;
+$indigo:  #6610f2;
+$purple:  #7961f1;
+$pink:    #fb8381;
+$red:     #e1464e;
+$orange:  #ff6d2b;
+$yellow:  #f5a623;
+$green:   #1fbeae;
+$teal:    #69dba4;
+$cyan:    #17a2b8;
+
+$pre-color: #fff;
+
+$gray-300: $border;
+// Secondary Color
+$gray-600: #607182;
+
+// Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+/*
+ * Rebuild Bootstrap Classnames
+ */
+* {
+  outline: 0 none !important;
+}
+
+h6, .h6{
+  font-size: .9rem;
+}
+
+a {
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+  color: #6798ef;
+}
+
+pre {
+  background-color: rgba(36, 36, 42, 1);
+  padding: 5px;
+}
+
+.text-center th {
+  text-align: center;
+}
+
+.text-gray {
+  color: #ccc !important;
+}
+
+.btn:focus {
+  outline: 0 none;
+  box-shadow: unset !important;
+}
