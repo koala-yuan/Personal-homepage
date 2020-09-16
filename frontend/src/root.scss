@@ -1,0 +1,35 @@
+// utils
+$inherit: inherit;
+$no_color: transparent;
+
+// background
+$bg_black: rgba(29, 29, 33, 1);
+$bg_white: rgb(255, 255, 255);
+$bg_inverse: rgb(49, 65, 88);
+$bg_yellow: rgb(252, 248, 226);
+$bg_dark: lighten($bg_inverse, 8%);
+$bg_light: lighten($bg_inverse, 60%);
+$bg_lighter: lighten($bg_inverse, 70%);
+
+// line
+$line_dark: lighten($bg_inverse, 5%);
+$line_light: lighten($bg_inverse, 70%);
+
+// fonts
+$font_family: "San Francisco", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+$font_white: $bg_white;
+$font_dark: $bg_inverse;
+$font_blue: #337ab7;
+$font_link_dark: #bfcbd9;
+$font_light: #9d9d9d;
+$font_lighter: lighten($font_light, 5%);
+
+// element UI
+$ele_font_blue: #20a0ff;
+
+$font: #17223c;
+$font-light: #606266;
+$font-lighter: #c0c4cc;
+
+$line: #e5e5e5;
+$border: #d9d9d9;
