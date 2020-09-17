@@ -1,12 +1,14 @@
 <script>
 import LoadingMask from '@/components/loading'
 import Home from '@/pages/home'
+import NavBar from '@/common/navbar'
 
 export default {
   name: 'app',
   components: {
     LoadingMask,
-    Home
+    Home,
+    NavBar
   }
 }
 </script>
@@ -14,6 +16,6 @@ export default {
 <template lang="pug">
 #app
   .app-root
-    Home
-  LoadingMask
+    NavBar
+    router-view
 </template>

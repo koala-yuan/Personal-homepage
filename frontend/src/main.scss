@@ -1,6 +1,7 @@
-@import '~@/bs.scss';
-@import '~@/element.scss';
 @import '~@/root.scss';
+
+// Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
 
 /*
  * Rebuild Gloabal components
@@ -19,6 +20,13 @@
 }
 
 /*
+ * Rebuild Bootstrap Classnames
+ */
+ * {
+  outline: 0 none !important;
+}
+
+/*
  * Rebuild Gloabal components
  */
 body {
@@ -31,4 +39,89 @@ body {
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.text-gary {
+  color: #9B9B9B;
+}
+
+.bubble-box {
+  position: relative;
+  width: 250px;
+  font-size: 18px;
+  color: #BEBEBE;
+  padding: 15px 10px;
+  border: 2px dashed #BEBEBE;
+  border-radius: 20px 20px 0 20px;
+  &::after {
+    content: ' ';
+    height: 22px;
+    width: 7px;
+    position: absolute;
+    z-index: 3;
+    border-right: 2px dashed #BEBEBE;
+    background-color: #fff;
+    right: -7px;
+    bottom: -8px;
+    transform: rotate(-23deg);
+  }
+  &::before {
+    content: ' ';
+    height: 17px;
+    width: 32px;
+    position: absolute;
+    z-index: 3;
+    border-bottom: 2px dashed #BEBEBE;
+    background-color: #fff;
+    right: -14px;
+    bottom: -5px;
+    transform: rotate(13deg);
+  }
+  &.right {
+    border-radius: 20px 20px 20px 0;
+    &::after {
+      left: -12px;
+      transform: rotate(27deg);
+      bottom: -7px;
+    }
+    &::before {
+      left: -14px;
+      transform: rotate(-13deg);
+    }
+  }
+}
+
+
+.chapter-title {
+  display: flex;
+  span {
+    font-size: 28px;
+    &:nth-child(1) {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      &::after {
+        content: ' ';
+        display: block;
+        width: 5px;
+        height: 35px;
+        background-color: $bg_yellow;
+        margin: 0 10px;
+      }
+    }
+  }
+}
+
+.title-box {
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.balck-bg-box {
+  background-color: $bg_black;
+  border-radius: 70px;
+  padding: 0 20%;
+  height: 26vw;
+  min-height: 400px;
+  position: relative;
 }

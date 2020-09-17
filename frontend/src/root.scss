@@ -3,13 +3,10 @@ $inherit: inherit;
 $no_color: transparent;
 
 // background
-$bg_black: rgba(29, 29, 33, 1);
+$bg_black: #2C2C2C;
 $bg_white: rgb(255, 255, 255);
 $bg_inverse: rgb(49, 65, 88);
-$bg_yellow: rgb(252, 248, 226);
-$bg_dark: lighten($bg_inverse, 8%);
-$bg_light: lighten($bg_inverse, 60%);
-$bg_lighter: lighten($bg_inverse, 70%);
+$bg_yellow: #FFCC66;
 
 // line
 $line_dark: lighten($bg_inverse, 5%);
@@ -21,13 +18,13 @@ $font_white: $bg_white;
 $font_dark: $bg_inverse;
 $font_blue: #337ab7;
 $font_link_dark: #bfcbd9;
-$font_light: #9d9d9d;
+$font_light: #6E728E;
 $font_lighter: lighten($font_light, 5%);
 
 // element UI
 $ele_font_blue: #20a0ff;
 
-$font: #17223c;
+$font: #2D2D2D;
 $font-light: #606266;
 $font-lighter: #c0c4cc;
 
