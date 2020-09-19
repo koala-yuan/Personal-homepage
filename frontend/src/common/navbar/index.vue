@@ -1,12 +1,15 @@
 <script>
 import { TABS } from '@/constant'
 
+import logoUrl from '@/assets/logo.png'
+
 export default {
   name: 'nav-bar',
   data () {
     return {
       tabs: TABS(),
-      activeTab: ''
+      activeTab: '',
+      logoUrl
     }
   },
   computed: {
@@ -35,7 +38,8 @@ export default {
 
 <template lang="pug">
 .nav-bar.d-flex
-  .logo.text-center LOGO
+  .logo.text-center
+    img(:src="logoUrl")
   .tab-list.d-flex.h-100
     .tab-item.h-100(
       v-for="{ value, label } in tabs",
@@ -48,15 +52,19 @@ export default {
 <style lang="scss">
 @import '~@/root.scss';
 
-$nheight: 60px;
+$nheight: 50px;
 
 .nav-bar {
   height: $nheight;
   background-color: $bg_black;
   color: $font_white;
-  padding: 0 8%;
+  padding: 0 4%;
   .logo {
     flex: 2.3;
+    line-height: $nheight;
+    img {
+      transform: scale(0.9);
+    }
   }
   .tab-list {
     flex: 3;
@@ -67,8 +75,8 @@ $nheight: 60px;
       border-radius: 10px;
       width: 100px;
       text-align: center;
-      margin-right: $nheight;
-      font-size: 20px;
+      margin-right: 60px;
+      font-size: 18px;
       &.is-active {
         background-color: $bg_yellow;
         color: $bg_black;

@@ -1,28 +1,34 @@
 <script>
+import avatarUrl from '@/assets/avatar.png'
+import skillsUrl from '@/assets/profileIcon/skills.png'
+import oneUrl from '@/assets/profileIcon/NO1.png'
+import twoUrl from '@/assets/profileIcon/NO2.png'
+import threeUrl from '@/assets/profileIcon/NO3.png'
+
 import { WORK_EXPERIENCE } from '@/constant'
 
 export default {
   name: 'profile',
   data () {
     return {
-      workExperiences: WORK_EXPERIENCE()
+      workExperiences: WORK_EXPERIENCE(),
+      avatarUrl,
+      skillsUrl,
+      oneUrl,
+      twoUrl,
+      threeUrl
     }
-  },
-  props: {},
-  computed: {},
-  methods: {},
-  mounted () {},
-  components: {},
-  watch: {}
+  }
 }
 </script>
 
 <template lang="pug">
 .profile
   .profile-base-info.d-flex.justify-content-center
-    .left
+    .d-flex.align-items-center
       .bubble-box 短发是我最近才剪的，人生第一次剪这么短，希望有一个新的开始，嘻嘻～
-    .my-photo img
+      .my-photo
+        img(:src="avatarUrl")
     .my-info
       p.chapter-title
         span 个人信息
@@ -46,10 +52,15 @@ export default {
           span 湖北武汉（当代国际花园）
   .profile-skills
     .balck-bg-box
-      h1.number-title NO.1
+      .number.number-one
+        img.w-100(:src="oneUrl")
+      .number.number-two
+        img.w-100(:src="twoUrl")
       p.chapter-title
         span 个人技能
         span PERSONAL SKILLS
+      .skills-img.text-center
+       img.h-100(:src="skillsUrl")
   .work-experience
     p.chapter-title
       span 工作经历
@@ -61,9 +72,14 @@ export default {
       )
         .left.h-100.d-flex.align-items-center
           span.h-100.d-flex.align-items-center {{ item.time }}
-          span {{ item.icon }}
-          span {{ item.text }}
-        .bubble-box.right(v-if="item.description") {{ item.description }}
+          .icon-img.text-center
+            img.w-100(v-if="item.iconUrl", :src="item.iconUrl")
+            .ellipsis(v-else) ......
+          span.ml-2 {{ item.text }}
+        .right(v-if="item.description")
+          .bubble-box.right {{ item.description }}
+    .number.number-three
+      img.w-100(:src="threeUrl")
 </template>
 
 <style lang="scss">
@@ -71,9 +87,12 @@ export default {
 
 .profile {
   .profile-base-info {
-    margin-top: 80px;
+    margin: 80px 0;
+    padding: 0 12%;
     .my-info {
        width: 500px;
+       min-width: 500px;
+       margin-left: 50px;
       .info-form {
         flex-wrap: wrap;
         .el-form-item {
@@ -86,32 +105,64 @@ export default {
         }
       }
     }
+    .my-photo {
+      margin: 0 50px 0 40px;
+    }
   }
 
   .profile-skills {
+    position: relative;
     .chapter-title {
+      margin-bottom: 0;
       color: $font_white;
       padding-top: 30px;
     }
-    .number-title {
+    .number {
       position: absolute;
-      top: -100px;
+      width: 8%;
+    }
+    .number-one {
+      top: -20px;
+      transform: translateY(-100%);
+    }
+    .number-two {
+      bottom: 20px;
+      right: 22%;
+      width: 10%;
+    }
+    .skills-img {
+      height: calc(100% - 120px);
     }
   }
 
   .work-experience {
+    position: relative;
     margin-top: 80px;
     padding: 0 20%;
+    .number-three {
+      position: absolute;
+      bottom: -10px;
+      right: 25%;
+      width: 9%;
+    }
     .experience-item-list {
       margin-top: 50px;
     }
     .experience-item {
       align-items: flex-end;
       position: relative;
-      height: 80px;
+      height: 100px;
+      color: $font_light;
+      .icon-img {
+        width: 80px;
+        min-width: 80px;
+      }
+      .right {
+        position: absolute;
+      }
       span:nth-child(1) {
         color: $font_light;
-        font-size: 26px;
+        font-size: 24px;
         margin-right: 20px;
         position: relative;
         width: 110px;
@@ -139,23 +190,28 @@ export default {
     }
     .experience-item:nth-child(1) {
       height: 120px;
+      .right {
+        right: -10px;
+        top: 0px;
+      }
     }
     .experience-item:nth-child(3) {
-      height: 250px;
-      .bubble-box {
+      height: 170px;
+      .right {
         width: 500px;
-        transform: translate(7px, -60px);
-        transform: translate(7px, -150px);
+        right: -110px;
+        top: -15px;
       }
     }
     .experience-item:nth-child(4) {
       height: 120px;
     }
     .experience-item:nth-child(5) {
-      height: 200px;
-      .bubble-box {
+      height: 250px;
+      .right {
         width: 600px;
-        transform: translate(7px, -100px);
+        right: -110px;
+        top: 12px;
       }
     }
     .experience-item:nth-child(6),

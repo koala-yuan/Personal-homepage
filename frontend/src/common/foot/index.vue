@@ -9,13 +9,7 @@ export default {
       footTextUrl,
       footCallmeUrl
     }
-  },
-  props: {},
-  computed: {},
-  methods: {},
-  mounted () {},
-  components: {},
-  watch: {}
+  }
 }
 </script>
 
@@ -34,7 +28,7 @@ export default {
 .foot {
   position: relative;
   height: 250px;
-  margin-top: 300px;
+  margin-top: 230px;
   background-color: $bg_black;
   color: $font_white;
   padding-top: 80px;

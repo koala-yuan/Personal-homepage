@@ -9,18 +9,12 @@ export default {
       contactUrl,
       contactItems: CONTACT_ITEMS()
     }
-  },
-  props: {},
-  computed: {},
-  methods: {},
-  mounted () {},
-  components: {},
-  watch: {}
+  }
 }
 </script>
 
 <template lang="pug">
-.contact-info.d-flex.justify-content-between.w-50.m-auto
+.contact-info.d-flex.justify-content-between.m-auto
   .left.d-flex.pl-3
     img.w-100(:src="contactUrl")
   .line
@@ -37,6 +31,8 @@ export default {
 @import '~@/root.scss';
 
 .contact-info {
+  width: 50%;
+  min-width: 750px;
   height: 200px;
   .left,
   .right {

@@ -7,6 +7,14 @@ export default {
     return {
       workItems: WORK_ITEMS()
     }
+  },
+  methods: {
+    toWork (name) {
+      this.$router.push({
+        name: 'work',
+        query: { active: name }
+      })
+    }
   }
 }
 </script>
@@ -23,8 +31,9 @@ export default {
       p 包括自己离职这几个月再加自学设计的虚拟项目，以及上个月兼职接单的第一个真实项目。我知道自己的经验不足，但是每个作品都是自己自学，从无到有设计出来的。
     .work-tabs.d-flex.justify-content-between
       .work-item(
-        v-for="{ name, imgUrl } in workItems",
-        :key="name"
+        v-for="{ name, imgUrl, value } in workItems",
+        :key="name",
+        @click="toWork(value)"
       )
         p.text-center {{ name }}
         .img-box.w-100
@@ -36,11 +45,11 @@ export default {
 @import '~@/root.scss';
 
 .my-work {
-  height: 800px;
+  height: calc(50vw + 50px);
   color: $font_white;
   .work-bg-box {
     .info {
-      padding: 50px 50px 20px;
+      padding-top: 30px;
       span {
         font-size: 38px;
       }
@@ -53,9 +62,10 @@ export default {
     .work-tabs {
       position: absolute;
       left: 50%;
-      transform: translateX(-50%);
-      bottom: -200px;
-      width: 50%;
+      bottom: 0;
+      transform: translate(-50%, 55%);
+      width: 55%;
+      z-index: 9;
       .work-item {
         width: 28%;
         p {
