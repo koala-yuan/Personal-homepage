@@ -56,6 +56,7 @@ export default {
       transform: translateX(-50%);
       bottom: -200px;
       width: 50%;
+      z-index: 9;
       .work-item {
         width: 28%;
         p {

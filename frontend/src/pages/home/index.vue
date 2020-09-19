@@ -1,7 +1,6 @@
 <script>
 import Wokr from '@/common/work'
 import ContactInfo from '@/common/contactInfo'
-import Foot from '@/common/foot'
 
 import bannerUrl from '@/assets/banner.png'
 import profileUrl from '@/assets/profile.png'
@@ -29,8 +28,7 @@ export default {
   },
   components: {
     Wokr,
-    ContactInfo,
-    Foot
+    ContactInfo
   }
 }
 </script>
@@ -43,7 +41,6 @@ export default {
     img.w-100(:src="profileUrl")
   Wokr
   ContactInfo
-  Foot
 </template>
 
 <style lang="scss">
