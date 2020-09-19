@@ -30,15 +30,18 @@ export const TABS = () => ([
 export const WORK_ITEMS = () => ([
   {
     name: 'APP 设计',
-    imgUrl: workAppUrl
+    imgUrl: workAppUrl,
+    value: 'app'
   },
   {
     name: '网页设计',
-    imgUrl: workWebUrl
+    imgUrl: workWebUrl,
+    value: 'web'
   },
   {
     name: 'BANNER 设计',
-    imgUrl: workBannerUrl
+    imgUrl: workBannerUrl,
+    value: 'banner'
   }
 ])
 

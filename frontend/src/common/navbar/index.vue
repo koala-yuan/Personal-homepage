@@ -58,7 +58,7 @@ $nheight: 50px;
   height: $nheight;
   background-color: $bg_black;
   color: $font_white;
-  padding: 0 8%;
+  padding: 0 4%;
   .logo {
     flex: 2.3;
     line-height: $nheight;
@@ -75,8 +75,8 @@ $nheight: 50px;
       border-radius: 10px;
       width: 100px;
       text-align: center;
-      margin-right: $nheight;
-      font-size: 20px;
+      margin-right: 60px;
+      font-size: 18px;
       &.is-active {
         background-color: $bg_yellow;
         color: $bg_black;

@@ -6,6 +6,12 @@ import Foot from '@/common/foot'
 
 export default {
   name: 'app',
+  computed: {
+    isShowFoot () {
+      const { name, query: { active } } = this.$route
+      return name !== 'work' || active === 'all'
+    }
+  },
   components: {
     LoadingMask,
     Home,
@@ -20,5 +26,5 @@ export default {
   .app-root
     NavBar
     router-view
-    Foot
+    Foot(v-show="isShowFoot")
 </template>
