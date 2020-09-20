@@ -1,5 +1,4 @@
 <script>
-import LoadingMask from '@/components/loading'
 import Home from '@/pages/home'
 import NavBar from '@/common/navbar'
 import Foot from '@/common/foot'
@@ -13,7 +12,6 @@ export default {
     }
   },
   components: {
-    LoadingMask,
     Home,
     NavBar,
     Foot
