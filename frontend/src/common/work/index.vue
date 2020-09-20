@@ -8,12 +8,20 @@ export default {
       workItems: WORK_ITEMS()
     }
   },
+  computed: {
+    isHome () {
+      const { name } = this.$route
+      return name === 'home'
+    }
+  },
   methods: {
     toWork (name) {
-      this.$router.push({
-        name: 'work',
-        query: { active: name }
-      })
+      if (this.isHome) {
+        this.$router.push({
+          name: 'work',
+          query: { active: name }
+        })
+      }
     }
   }
 }
@@ -33,7 +41,8 @@ export default {
       .work-item(
         v-for="{ name, imgUrl, value } in workItems",
         :key="name",
-        @click="toWork(value)"
+        @click="toWork(value)",
+        :class="isHome ? 'is-home-work' : ''"
       )
         p.text-center {{ name }}
         .img-box.w-100
@@ -73,18 +82,11 @@ export default {
           font-weight: 500;
         }
         .img-box {
-          cursor: pointer;
           position: relative;
           box-shadow: 1px 8px 48px 15px rgba(0, 0, 0, 0.13);
           border-radius: 20px;
           overflow: hidden;
           transition: all 0.5s;
-          &:hover {
-            transform: scale(1.05);
-            .more-btn {
-              display: block;
-            }
-          }
           .more-btn {
             display: none;
             position: absolute;
@@ -96,6 +98,18 @@ export default {
             font-size: 18px;
             text-align: center;
             background-color: $bg_yellow;
+          }
+        }
+
+        &.is-home-work {
+          .img-box {
+            cursor: pointer;
+              &:hover {
+              transform: scale(1.05);
+              .more-btn {
+                display: block;
+              }
+            }
           }
         }
       }
