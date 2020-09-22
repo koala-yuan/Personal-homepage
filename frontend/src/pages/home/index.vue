@@ -1,9 +1,11 @@
 <script>
+import { BASE_ASSETS_URL } from '@/constant'
+
 import Wokr from '@/common/work'
 import ContactInfo from '@/common/contactInfo'
 
-import bannerUrl from '@/assets/banner.png'
-import profileUrl from '@/assets/profile.png'
+export const bannerUrl = BASE_ASSETS_URL + '/banner.png'
+export const profileUrl = BASE_ASSETS_URL + '/profile.png'
 
 export default {
   name: 'home',
@@ -12,19 +14,6 @@ export default {
       bannerUrl,
       profileUrl
     }
-  },
-  methods: {
-    initBanner () {
-      const img = new Image()
-      img.src = bannerUrl
-      img.onload = () => {
-        const box = this.$refs.bannerBox
-        box.appendChild(img)
-      }
-    }
-  },
-  mounted () {
-    // this.initBanner()
   },
   components: {
     Wokr,

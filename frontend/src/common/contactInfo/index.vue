@@ -1,6 +1,7 @@
 <script>
-import contactUrl from '@/assets/how_ contect.png'
-import { CONTACT_ITEMS } from '@/constant'
+import { CONTACT_ITEMS, BASE_ASSETS_URL } from '@/constant'
+
+export const contactUrl = BASE_ASSETS_URL + '/how_ contect.png'
 
 export default {
   name: 'contact-info',

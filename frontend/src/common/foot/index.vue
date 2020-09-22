@@ -1,6 +1,8 @@
 <script>
-import footTextUrl from '@/assets/foot_text.png'
-import footCallmeUrl from '@/assets/foot_callme.png'
+import { BASE_ASSETS_URL } from '@/constant'
+
+export const footTextUrl = BASE_ASSETS_URL + '/foot_text.png'
+export const footCallmeUrl = BASE_ASSETS_URL + '/foot_callme.png'
 
 export default {
   name: 'foot',

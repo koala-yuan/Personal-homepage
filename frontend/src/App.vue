@@ -9,12 +9,20 @@ export default {
     isShowFoot () {
       const { name, query: { active } } = this.$route
       return name !== 'work' || active === 'all'
+    },
+    routeName () {
+      return this.$route.name
     }
   },
   components: {
     Home,
     NavBar,
     Foot
+  },
+  watch: {
+    routeName () {
+      window.scrollTo(0, 0)
+    }
   }
 }
 </script>

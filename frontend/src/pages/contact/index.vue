@@ -1,5 +1,7 @@
 <script>
-import mapUrl from '@/assets/map.png'
+import { BASE_ASSETS_URL } from '@/constant'
+
+export const mapUrl = BASE_ASSETS_URL + '/map.png'
 
 export default {
   name: 'contact',

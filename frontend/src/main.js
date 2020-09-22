@@ -8,25 +8,16 @@ import '@/main.scss'
 import Vue from 'vue'
 import ElementUI from 'element-ui'
 
-import VueMq from 'vue-mq'
-import CompositionApi from '@vue/composition-api'
-
 import { sync } from 'vuex-router-sync'
 
 import App from '@/App'
 import router from '@/router'
 import store from '@/store'
 
-Vue.use(CompositionApi)
+Vue.prototype.BASE_ASSETS_URL = 'https://lingyun-1303231715.cos.ap-chengdu.myqcloud.com'
+
 Vue.use(ElementUI, {
   size: 'small'
-})
-Vue.use(VueMq, {
-  breakpoints: {
-    narrow: 1260,
-    lg: 1900,
-    xl: Infinity
-  }
 })
 
 sync(store, router, { moduleName: 'route' })

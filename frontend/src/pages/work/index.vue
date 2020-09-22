@@ -1,15 +1,15 @@
 <script>
 import Wokr from '@/common/work'
-import { WORK_TYPES } from '@/constant'
+import { WORK_TYPES, BASE_ASSETS_URL } from '@/constant'
 
 import { bhtImgs, lllcImgs, myyyImgs, allWorkList, bannerImgs, webImgs } from './constant'
 
-import oneUrl from '@/assets/profileIcon/NO1.png'
-import twoUrl from '@/assets/profileIcon/NO2bg.png'
-import threeUrl from '@/assets/profileIcon/NO3.png'
+export const oneUrl = BASE_ASSETS_URL + '/profileIcon/NO1.png'
+export const twoUrl = BASE_ASSETS_URL + '/profileIcon/NO2bg.png'
+export const threeUrl = BASE_ASSETS_URL + '/profileIcon/NO3.png'
 
-import lllcLogo from '@/assets/work/lllc/logo.png'
-import myyyLogo from '@/assets/work/myyy/logo.png'
+export const lllcLogo = BASE_ASSETS_URL + '/work/lllc/logo.png'
+export const myyyLogo = BASE_ASSETS_URL + '/work/myyy/logo.png'
 
 export default {
   name: 'work',
@@ -114,9 +114,6 @@ export default {
         this.initCurrentAll()
       },
       deep: true
-    },
-    activeTab () {
-      this.handelScrollToTypes()
     },
     currentAll (val) {
       val && this.handelScrollToTypes()
