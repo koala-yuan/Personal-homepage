@@ -1,7 +1,7 @@
 <script>
-import { TABS } from '@/constant'
+import { TABS, BASE_ASSETS_URL } from '@/constant'
 
-import logoUrl from '@/assets/logo.png'
+export const logoUrl = BASE_ASSETS_URL + '/logo.png'
 
 export default {
   name: 'nav-bar',

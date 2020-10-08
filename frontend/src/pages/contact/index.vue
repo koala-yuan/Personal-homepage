@@ -1,21 +1,22 @@
 <script>
+import { BASE_ASSETS_URL } from '@/constant'
+
+export const mapUrl = BASE_ASSETS_URL + '/map.png'
+
 export default {
   name: 'contact',
   data () {
-    return {}
-  },
-  props: {},
-  computed: {},
-  methods: {},
-  mounted () {},
-  components: {},
-  watch: {}
+    return {
+      mapUrl
+    }
+  }
 }
 </script>
 
 <template lang="pug">
 .contact
-  .map-view map-view
+  .map-view
+    img.w-100(:src="mapUrl")
   .my-info
     label 现居地
     p 湖北武汉当代国际花园
@@ -29,7 +30,10 @@ export default {
 
 <style lang="scss">
 .contact {
-  padding: 0 15%;
+  padding: 0 20%;
+  .map-view {
+    margin: 30px 0 50px;
+  }
   .my-info {
     p {
       font-size: 20px;

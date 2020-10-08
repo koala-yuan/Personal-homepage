@@ -1,11 +1,11 @@
 <script>
-import avatarUrl from '@/assets/avatar.png'
-import skillsUrl from '@/assets/profileIcon/skills.png'
-import oneUrl from '@/assets/profileIcon/NO1.png'
-import twoUrl from '@/assets/profileIcon/NO2.png'
-import threeUrl from '@/assets/profileIcon/NO3.png'
+import { WORK_EXPERIENCE, BASE_ASSETS_URL } from '@/constant'
 
-import { WORK_EXPERIENCE } from '@/constant'
+export const avatarUrl = BASE_ASSETS_URL + '/avatar.png'
+export const skillsUrl = BASE_ASSETS_URL + '/profileIcon/skills.png'
+export const oneUrl = BASE_ASSETS_URL + '/profileIcon/NO1.png'
+export const twoUrl = BASE_ASSETS_URL + '/profileIcon/NO2.png'
+export const threeUrl = BASE_ASSETS_URL + '/profileIcon/NO3.png'
 
 export default {
   name: 'profile',

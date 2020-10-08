@@ -1,12 +1,14 @@
-import workBannerUrl from '@/assets/work/work_banner.png'
-import workAppUrl from '@/assets/work/work_app.png'
-import workWebUrl from '@/assets/work/work_web.png'
+export const BASE_ASSETS_URL = 'https://lingyun-1303231715.cos.ap-chengdu.myqcloud.com//assets'
 
-import huohuaUrl from '@/assets/profileIcon/huohua.png'
-import ershiUrl from '@/assets/profileIcon/ershi.png'
-import kabaUrl from '@/assets/profileIcon/kaba.png'
-import zqkUrl from '@/assets/profileIcon/zqk.png'
-import psUrl from '@/assets/profileIcon/ps.png'
+const workBannerUrl = BASE_ASSETS_URL + '/work/work_banner.png'
+const workAppUrl = BASE_ASSETS_URL + '/work/work_app.png'
+const workWebUrl = BASE_ASSETS_URL + '/work/work_web.png'
+
+const huohuaUrl = BASE_ASSETS_URL + '/profileIcon/huohua.png'
+const ershiUrl = BASE_ASSETS_URL + '/profileIcon/ershi.png'
+const kabaUrl = BASE_ASSETS_URL + '/profileIcon/kaba.png'
+const zqkUrl = BASE_ASSETS_URL + '/profileIcon/zqk.png'
+const psUrl = BASE_ASSETS_URL + '/profileIcon/ps.png'
 
 export const TABS = () => ([
   {

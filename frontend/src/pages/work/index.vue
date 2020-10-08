@@ -1,15 +1,15 @@
 <script>
 import Wokr from '@/common/work'
-import { WORK_TYPES } from '@/constant'
+import { WORK_TYPES, BASE_ASSETS_URL } from '@/constant'
 
 import { bhtImgs, lllcImgs, myyyImgs, allWorkList, bannerImgs, webImgs } from './constant'
 
-import oneUrl from '@/assets/profileIcon/NO1.png'
-// import twoUrl from '@/assets/profileIcon/NO2.png'
-import threeUrl from '@/assets/profileIcon/NO3.png'
+export const oneUrl = BASE_ASSETS_URL + '/profileIcon/NO1.png'
+export const twoUrl = BASE_ASSETS_URL + '/profileIcon/NO2bg.png'
+export const threeUrl = BASE_ASSETS_URL + '/profileIcon/NO3.png'
 
-import lllcLogo from '@/assets/work/lllc/logo.png'
-import myyyLogo from '@/assets/work/myyy/logo.png'
+export const lllcLogo = BASE_ASSETS_URL + '/work/lllc/logo.png'
+export const myyyLogo = BASE_ASSETS_URL + '/work/myyy/logo.png'
 
 export default {
   name: 'work',
@@ -22,6 +22,7 @@ export default {
       lllcImgs,
       myyyImgs,
       oneUrl,
+      twoUrl,
       threeUrl,
       lllcLogo,
       myyyLogo,
@@ -93,6 +94,10 @@ export default {
       if (isExist) {
         this.currentAll = currentAll
       }
+    },
+    handelScrollToTypes () {
+      const dom = this.$refs.workTypesDom
+      window.scrollTo(0, dom.offsetTop || 0)
     }
   },
   mounted () {
@@ -109,6 +114,9 @@ export default {
         this.initCurrentAll()
       },
       deep: true
+    },
+    currentAll (val) {
+      val && this.handelScrollToTypes()
     }
   }
 }
@@ -196,7 +204,7 @@ mixin web1
 
 mixin web2
   .web-view2
-    img.w-100(:src="webImgs[3]")
+    img.w-100.mb-4(:src="webImgs[3]")
     .d-flex
       .description 【临摹项目】后台管理系统练习，参考网络图片。
       img(:src="webImgs[5]")
@@ -204,7 +212,7 @@ mixin web2
 
 .work-view
   Wokr
-  .work-types.d-flex
+  .work-types.d-flex(ref="workTypesDom")
     .work-type.mr-5(
       v-for="item in workTypes",
       :key="item.name",
@@ -256,7 +264,7 @@ mixin web2
           img.w-100(:src="oneUrl")
       .two
         .number-box.text-right
-          img.w-100(:src="oneUrl")
+          img.w-100(:src="twoUrl")
         +lllc
       .three
         .number-box.text-right
@@ -269,7 +277,7 @@ mixin web2
           img.w-100(:src="oneUrl")
       .two
         .number-box
-          img.w-100(:src="oneUrl")
+          img.w-100(:src="twoUrl")
         +web2
     .work-tab-banner(v-show="activeTab === 'banner'")
       +banner
