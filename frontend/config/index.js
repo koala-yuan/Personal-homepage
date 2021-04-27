@@ -11,7 +11,7 @@ module.exports = {
     env: devEnv,
     port: devEnv.PORT,
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: './',
     proxyTable: devEnv.IS_DEBUG ? {} : {
       // proxy all requests starting with /api to API server
       '/api': {
@@ -51,10 +51,10 @@ module.exports = {
   },
   build: {
     env: prodEnv,
-    index: path.resolve(__dirname, '../../web/public/index.html'),
-    assetsRoot: path.resolve(__dirname, '../../web/public'),
+    index: path.resolve(__dirname, '../../index.html'),
+    assetsRoot: path.resolve(__dirname, '../../'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: './',
     /**
      * Source Maps
      */
